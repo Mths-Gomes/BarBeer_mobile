@@ -9,7 +9,6 @@ interface ButtonProp extends ButtonProps {
 const Button: React.FC<ButtonProp> = ({ children, onPress }) => (
   <View>
     <Container
-      fullWidth={true}
       onPress={onPress}
       radius={10}
       text={children}
@@ -26,5 +25,3 @@ const Button: React.FC<ButtonProp> = ({ children, onPress }) => (
 );
 
 export default Button;
-
-//{ color: '#213', fontFamily: 'RobotoSlab-Medium' }
