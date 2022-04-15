@@ -1,8 +1,6 @@
 import styled from 'styled-components/native';
 import { Button } from 'material-bread';
 
-export const View = styled.View``;
-
 export const Container = styled(Button)`
   width: 100%;
   height: 60px;
