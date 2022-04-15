@@ -15,6 +15,7 @@ import { Form } from '@unform/mobile';
 import { FormHandles } from '@unform/core';
 import * as Yup from 'yup';
 
+import api from '../../services/api';
 import getValidationErrors from '../../utils/getValidationErrors';
 import Input from '../../components/Input/index';
 import Button from '../../components/Button/index';
@@ -55,9 +56,14 @@ const SignUp: React.FC = () => {
 
       await schema.validate(data, { abortEarly: false });
 
-      // await api.post('/users', data);
+      await api.post('/users', data);
 
-      // navegate('/');
+      Alert.alert(
+        'Cadastro realizado com sucesso!',
+        'Você já pode fazer login na aplicação.',
+      );
+
+      navigation.goBack();
 
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (error: any) {
